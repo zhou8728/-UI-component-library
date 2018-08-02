@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/zhou8728/-UI-component-library/issues"
   },
-  "homepage": "https://github.com/zhou8728/-UI-component-library#readme"
+  "homepage": "https://github.com/zhou8728/-UI-component-library#readme",
+  "dependencies": {
+    "vue": "^2.5.16"
+  }
 }
