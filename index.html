@@ -58,7 +58,7 @@
 </head>
 <body>
 <div id="app">
-    <g-button :loading="loading1" @click="loading1=!loading1"></g-button>
+    <!--<g-button :loading="loading1" @click="loading1=!loading1"></g-button>-->
     <!--<g-button :loading=loading1>-->
        <!--按钮-->
     <!--</g-button>-->
@@ -66,10 +66,15 @@
         按钮
     </g-button>
     <div id="test"></div>
-    <g-icon name="download"></g-icon>
+    <!--<g-icon name="download"></g-icon>-->
     <g-button icon="setting" @click="loading3=!loading3"  icon-position="right" :loading="loading3">
         按钮
     </g-button>
+    <g-button-group>
+        <g-button icon="left">上一页</g-button>
+            <g-button>更多</g-button>
+        <g-button icon-position="right" icon="right">下一页</g-button>
+    </g-button-group>
     <!--{{message}}-->
 </div>
 <!--<script src="./node_modules/vue/dist/vue.min.js"></script>-->
