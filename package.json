@@ -4,9 +4,6 @@
   "description": "a ui liberary using vue",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "scripts": {
     "start": "parcel index.html"
   },
   "repository": {
@@ -29,6 +26,7 @@
   "devDependencies": {
     "@vue/component-compiler-utils": "^2.1.0",
     "chai": "^4.1.2",
+    "chai-spies": "^1.0.0",
     "node-sass": "^4.9.2",
     "parcel-bundler": "^1.9.7",
     "vue-template-compiler": "^2.5.17"
