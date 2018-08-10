@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3da786a9-9387-447b-87c3-22e177a5acdf" name="Default" comment="第一个元素不需要margin left -1px">
-      <change afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/button.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/button.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/button.vue" afterDir="false" />
+    <list default="true" id="3da786a9-9387-447b-87c3-22e177a5acdf" name="Default" comment="用三个版本node测试">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -29,9 +27,10 @@
           <entry key="html" value="255" />
           <entry key="js" value="1157" />
           <entry key="json" value="146" />
-          <entry key="txt" value="138" />
+          <entry key="md" value="92" />
+          <entry key="txt" value="153" />
           <entry key="vue" value="658" />
-          <entry key="yml" value="164" />
+          <entry key="yml" value="181" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -39,15 +38,17 @@
           <entry key="HTML" value="255" />
           <entry key="JSON" value="146" />
           <entry key="JavaScript" value="1157" />
-          <entry key="PLAIN_TEXT" value="138" />
+          <entry key="Markdown" value="92" />
+          <entry key="PLAIN_TEXT" value="153" />
           <entry key="Vue.js" value="658" />
-          <entry key="YAML" value="164" />
+          <entry key="YAML" value="181" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="js" value="2" />
           <entry key="json" value="1" />
+          <entry key="md" value="1" />
           <entry key="vue" value="1" />
           <entry key="yml" value="1" />
         </counts>
@@ -56,6 +57,7 @@
         <counts>
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="2" />
+          <entry key="Markdown" value="1" />
           <entry key="Vue.js" value="1" />
           <entry key="YAML" value="1" />
         </counts>
@@ -105,11 +107,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="53" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
+            <state relative-caret-position="180">
+              <caret line="10" column="36" lean-forward="true" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -141,11 +143,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/icon.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/readme.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="108">
+                <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -176,7 +181,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/button.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/icon.vue" />
@@ -186,6 +190,7 @@
         <option value="$PROJECT_DIR$/src/button.vue" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/.travis.yml" />
+        <option value="$PROJECT_DIR$/readme.md" />
       </list>
     </option>
   </component>
@@ -206,8 +211,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="168" />
-    <option name="y" value="61" />
+    <option name="x" value="174" />
+    <option name="y" value="59" />
     <option name="width" value="1628" />
     <option name="height" value="941" />
   </component>
@@ -249,7 +254,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="reference.idesettings.emmet.css" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -278,7 +283,7 @@
       <workItem from="1533194660645" duration="703000" />
       <workItem from="1533195431435" duration="20247000" />
       <workItem from="1533733086322" duration="133000" />
-      <workItem from="1533733359748" duration="24397000" />
+      <workItem from="1533733359748" duration="28094000" />
     </task>
     <task id="LOCAL-00001" summary="add gitignore">
       <created>1533192402483</created>
@@ -378,14 +383,21 @@
       <option name="project" value="LOCAL" />
       <updated>1533829597779</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="用三个版本node测试">
+      <created>1533880164056</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1533880164056</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49570000" />
+    <option name="totallyTimeSpent" value="53267000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="168" y="61" width="1628" height="941" extended-state="0" />
+    <frame x="174" y="59" width="1628" height="941" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22028625" />
@@ -431,26 +443,14 @@
     <MESSAGE value="创建button-group" />
     <MESSAGE value="检测子元素是不是button" />
     <MESSAGE value="第一个元素不需要margin left -1px" />
-    <option name="LAST_COMMIT_MESSAGE" value="第一个元素不需要margin left -1px" />
+    <MESSAGE value="用三个版本node测试" />
+    <option name="LAST_COMMIT_MESSAGE" value="用三个版本node测试" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/node_modules/.gitignore" />
     <entry file="file://$PROJECT_DIR$/button.js" />
     <entry file="file://$PROJECT_DIR$/LICENSE">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readme.md">
-      <provider editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package-lock.json">
       <provider selected="true" editor-type-id="text-editor">
@@ -527,8 +527,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="53" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
+        <state relative-caret-position="180">
+          <caret line="10" column="36" lean-forward="true" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme.md">
+      <provider editor-type-id="text-editor">
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="108">
+            <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
