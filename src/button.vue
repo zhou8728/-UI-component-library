@@ -14,8 +14,11 @@
 </template>
 
 <script>
+    import Icon from './icon'
     export default {
-
+        componnets:{
+          'g-icon':Icon
+        },
         // props: ['icon', 'iconPosition']
         props:{
             icon:{},
