@@ -7,7 +7,7 @@
 
 <script>
     export default {
-        name: "button-group.vue",
+        // name: "button-group.vue",
         mounted(){
             for(let node of this.$el.children){
                 let name=node.nodeName.toLowerCase()

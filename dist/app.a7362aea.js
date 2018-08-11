@@ -10303,7 +10303,7 @@ exports.reload = tryWrap(function (id, options) {
   })
 })
 
-},{}],"src/button.vue":[function(require,module,exports) {
+},{}],"src/icon.vue":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -10314,19 +10314,78 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 exports.default = {
+    // name:'GuluIcon',
+    props: ['name']
+};
+        var $6bbeef = exports.default || module.exports;
+      
+      if (typeof $6bbeef === 'function') {
+        $6bbeef = $6bbeef.options;
+      }
+    
+        /* template */
+        Object.assign($6bbeef, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("svg", { staticClass: "g-icon" }, [
+    _c("use", { attrs: { "xlink:href": "#i-" + _vm.name } })
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
 
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: "data-v-6bbeef",
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$6bbeef', $6bbeef);
+          } else {
+            api.reload('$6bbeef', $6bbeef);
+          }
+        }
+
+        
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+      }
+    })();
+},{"_css_loader":"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/button.vue":[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _icon = require('./icon');
+
+var _icon2 = _interopRequireDefault(_icon);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+    // name:'GuluButton',
+    components: {
+        'g-icon': _icon2.default
+    },
     // props: ['icon', 'iconPosition']
     props: {
         icon: {},
@@ -10344,7 +10403,21 @@ exports.default = {
         }
     }
 
-};
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
         var $b99993 = exports.default || module.exports;
       
       if (typeof $b99993 === 'function') {
@@ -10390,7 +10463,7 @@ render._withStripped = true
             render: render,
             staticRenderFns: staticRenderFns,
             _compiled: true,
-            _scopeId: null,
+            _scopeId: "data-v-b99993",
             functional: undefined
           };
         })());
@@ -10416,7 +10489,7 @@ render._withStripped = true
       
       }
     })();
-},{"_css_loader":"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/icon.vue":[function(require,module,exports) {
+},{"./icon":"src/icon.vue","_css_loader":"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/button-group.vue":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -10427,75 +10500,11 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
-
-exports.default = {
-    props: ['name']
-};
-        var $6bbeef = exports.default || module.exports;
-      
-      if (typeof $6bbeef === 'function') {
-        $6bbeef = $6bbeef.options;
-      }
-    
-        /* template */
-        Object.assign($6bbeef, (function () {
-          var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("svg", { staticClass: "g-icon" }, [
-    _c("use", { attrs: { "xlink:href": "#i-" + _vm.name } })
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-
-          return {
-            render: render,
-            staticRenderFns: staticRenderFns,
-            _compiled: true,
-            _scopeId: null,
-            functional: undefined
-          };
-        })());
-      
-    /* hot reload */
-    (function () {
-      if (module.hot) {
-        var api = require('vue-hot-reload-api');
-        api.install(require('vue'));
-        if (api.compatible) {
-          module.hot.accept();
-          if (!module.hot.data) {
-            api.createRecord('$6bbeef', $6bbeef);
-          } else {
-            api.reload('$6bbeef', $6bbeef);
-          }
-        }
-
-        
-        var reloadCSS = require('_css_loader');
-        module.hot.dispose(reloadCSS);
-        module.hot.accept(reloadCSS);
-      
-      }
-    })();
-},{"_css_loader":"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/button-group.vue":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-//
-//
-//
-//
-//
 //
 //
 
 exports.default = {
-    name: "button-group.vue",
+    // name: "button-group.vue",
     mounted: function mounted() {
         var _iteratorNormalCompletion = true;
         var _didIteratorError = false;
@@ -10507,7 +10516,7 @@ exports.default = {
 
                 var name = node.nodeName.toLowerCase();
                 if (name !== 'button') {
-                    console.warn("g-button-group\u7684\u5B50\u5143\u7D20\u5E94\u8BE5\u5168\u662F g-button,\u4F46\u662F\u4F60\u5199\u7684\u662F " + name);
+                    console.warn('g-button-group\u7684\u5B50\u5143\u7D20\u5E94\u8BE5\u5168\u662F g-button,\u4F46\u662F\u4F60\u5199\u7684\u662F ' + name);
                 }
             }
         } catch (err) {
@@ -10573,7 +10582,123 @@ render._withStripped = true
       
       }
     })();
-},{"_css_loader":"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/app.js":[function(require,module,exports) {
+},{"_css_loader":"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/input.vue":[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _icon = require('./icon');
+
+var _icon2 = _interopRequireDefault(_icon);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+    // name: "input.vue"
+    components: { Icon: _icon2.default },
+    props: {
+        value: {
+            type: String
+        },
+        disabled: {
+            type: Boolean,
+            default: false
+        },
+        readonly: {
+            type: Boolean,
+            default: false
+        },
+        error: {
+            type: String
+            // default:true
+        }
+
+    }
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+        var $ef6472 = exports.default || module.exports;
+      
+      if (typeof $ef6472 === 'function') {
+        $ef6472 = $ef6472.options;
+      }
+    
+        /* template */
+        Object.assign($ef6472, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "wrapper", class: { error: _vm.error } },
+    [
+      _c("input", {
+        attrs: { disabled: _vm.disabled, readonly: _vm.readonly, type: "text" },
+        domProps: { value: _vm.value },
+        on: {
+          change: function($event) {
+            _vm.$emit("change")
+          }
+        }
+      }),
+      _vm._v(" "),
+      _vm.error
+        ? [
+            _c("icon", { staticClass: "icon-error", attrs: { name: "error" } }),
+            _vm._v(" "),
+            _c("span", [_vm._v(_vm._s(_vm.error))])
+          ]
+        : _vm._e()
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: "data-v-ef6472",
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$ef6472', $ef6472);
+          } else {
+            api.reload('$ef6472', $ef6472);
+          }
+        }
+
+        
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+      }
+    })();
+},{"./icon":"src/icon.vue","_css_loader":"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/app.js":[function(require,module,exports) {
 'use strict';
 
 var _vue = require('vue');
@@ -10592,11 +10717,16 @@ var _buttonGroup = require('./button-group');
 
 var _buttonGroup2 = _interopRequireDefault(_buttonGroup);
 
+var _input = require('./input');
+
+var _input2 = _interopRequireDefault(_input);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _vue2.default.component('g-button', _button2.default);
 _vue2.default.component('g-icon', _icon2.default);
 _vue2.default.component('g-button-group', _buttonGroup2.default);
+_vue2.default.component('g-input', _input2.default);
 
 new _vue2.default({
     el: '#app',
@@ -10665,7 +10795,7 @@ new _vue2.default({
 //     button.$el.remove()
 //     button.$destroy()
 // }
-},{"vue":"node_modules/vue/dist/vue.common.js","./button":"src/button.vue","./icon":"src/icon.vue","./button-group":"src/button-group.vue"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"vue":"node_modules/vue/dist/vue.common.js","./button":"src/button.vue","./icon":"src/icon.vue","./button-group":"src/button-group.vue","./input":"src/input.vue"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -10694,7 +10824,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '52061' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '52469' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
