@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3da786a9-9387-447b-87c3-22e177a5acdf" name="Default" comment="添加 input 的测试用例">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/app.a7362aea.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app.a7362aea.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/app.a7362aea.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app.a7362aea.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/input.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/input.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/input.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/input.test.js" afterDir="false" />
-    </list>
+    <list default="true" id="3da786a9-9387-447b-87c3-22e177a5acdf" name="Default" comment="让input 支持 v-model 双向绑定" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -34,7 +25,7 @@
           <entry key="js" value="3209" />
           <entry key="json" value="146" />
           <entry key="md" value="761" />
-          <entry key="txt" value="214" />
+          <entry key="txt" value="240" />
           <entry key="vue" value="1912" />
           <entry key="yml" value="181" />
         </counts>
@@ -45,7 +36,7 @@
           <entry key="JSON" value="146" />
           <entry key="JavaScript" value="3209" />
           <entry key="Markdown" value="761" />
-          <entry key="PLAIN_TEXT" value="214" />
+          <entry key="PLAIN_TEXT" value="240" />
           <entry key="Vue.js" value="1912" />
           <entry key="YAML" value="181" />
         </counts>
@@ -154,8 +145,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/input.test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="270">
+              <caret line="15" column="33" lean-forward="true" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
               <folding>
                 <element signature="e#26#47#0" expanded="true" />
               </folding>
@@ -234,10 +225,10 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="37" />
     <option name="y" value="23" />
-    <option name="width" value="1628" />
+    <option name="width" value="1403" />
     <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -307,7 +298,7 @@
       <workItem from="1533194660645" duration="703000" />
       <workItem from="1533195431435" duration="20247000" />
       <workItem from="1533733086322" duration="133000" />
-      <workItem from="1533733359748" duration="51704000" />
+      <workItem from="1533733359748" duration="53675000" />
     </task>
     <task id="LOCAL-00001" summary="add gitignore">
       <created>1533192402483</created>
@@ -428,14 +419,21 @@
       <option name="project" value="LOCAL" />
       <updated>1533973339506</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="让input 支持 v-model 双向绑定">
+      <created>1534053809892</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1534053809892</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76877000" />
+    <option name="totallyTimeSpent" value="78848000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="37" y="23" width="1403" height="877" extended-state="6" />
+    <frame x="37" y="23" width="1403" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2561505" />
@@ -486,7 +484,8 @@
     <MESSAGE value="更新 README.md" />
     <MESSAGE value="添加input.vue及其样式" />
     <MESSAGE value="添加 input 的测试用例" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加 input 的测试用例" />
+    <MESSAGE value="让input 支持 v-model 双向绑定" />
+    <option name="LAST_COMMIT_MESSAGE" value="让input 支持 v-model 双向绑定" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/node_modules/.gitignore" />
@@ -616,8 +615,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/input.test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="270">
+          <caret line="15" column="33" lean-forward="true" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
           <folding>
             <element signature="e#26#47#0" expanded="true" />
           </folding>
