@@ -10658,16 +10658,16 @@ exports.default = {
         domProps: { value: _vm.value },
         on: {
           change: function($event) {
-            _vm.$emit("change", $event)
+            _vm.$emit("change", $event.target.value)
           },
           input: function($event) {
-            _vm.$emit("input", $event)
+            _vm.$emit("input", $event.target.value)
           },
           focus: function($event) {
-            _vm.$emit("focus", $event)
+            _vm.$emit("focus", $event.target.value)
           },
           blur: function($event) {
-            _vm.$emit("blur", $event)
+            _vm.$emit("blur", $event.target.value)
           }
         }
       }),
@@ -10751,7 +10751,8 @@ new _vue2.default({
     data: {
         loading1: false,
         loading2: false,
-        loading3: false
+        loading3: false,
+        message: 'hi'
     },
     created: function created() {
         var _this = this;
@@ -10858,7 +10859,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '64720' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '59015' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 

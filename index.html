@@ -82,7 +82,9 @@
     <div class="box">
         <g-input value="张三" :disabled="true" :readonly="true"></g-input>
         <g-input value="李四" readonly></g-input>
-        <g-input value="李四"></g-input>
+        <g-input value="李四" v-model="message"></g-input>
+        <p>{{message}}</p>
+        <button @click="message+=1">+1</button>
     </div>
 
     <div class="box">
