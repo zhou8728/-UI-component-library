@@ -66,9 +66,9 @@
     }
     .col{
         height:100px;
-        background: grey;
+        /*background: grey;*/
         width:50%;
-        border:1px solid red;
+        /*border:1px solid red;*/
     }
     /*.col[data-span="2"]{*/
          /*width:8.333333%;*/
@@ -132,36 +132,33 @@
     /*}*/
 </style>
 <div id="app">
+    <div style="border :1px solid black">
 
-    <g-row>
+
+    <g-row gutter="20">
         <g-col>1</g-col>
         <g-col>2</g-col>
     </g-row>
-    <g-row>
-        <g-col :span="2">1</g-col>
-        <g-col :span="22">2</g-col>
+    <g-row gutter="20">
+        <g-col>1</g-col>
+        <g-col>2</g-col>
+        <g-col>3</g-col>
     </g-row>
-    <g-row>
+    <g-row gutter="20">
+        <g-col>1</g-col>
+        <g-col>2</g-col>
+        <g-col>3</g-col>
+        <g-col>4</g-col>
+    </g-row>
+    <g-row gutter="20">
+        <g-col span="4"></g-col>
+        <g-col span="20" offset="2">2</g-col>
+    </g-row>
+    <g-row gutter="20">
         <g-col :span="4">1</g-col>
-        <g-col :span="20">2</g-col>
+        <g-col span="18">2</g-col>
     </g-row>
-    <!--<div class="row">-->
-        <!--<div class="col"></div>-->
-        <!--<div class="col"></div>-->
-    <!--</div>-->
-    <!--<div class="row">-->
-        <!--<div class="col"></div>-->
-        <!--<div class="col"></div>-->
-        <!--<div class="col"></div>-->
-    <!--</div>-->
-    <!--<div class="row">-->
-        <!--<div class="col"></div>-->
-        <!--<div class="col"></div>-->
-    <!--</div>-->
-    <!--<div class="row">-->
-        <!--<div class="col" data-span="2"></div>-->
-        <!--<div class="col" data-span="22"></div>-->
-    <!--</div>-->
+
 
     <hr>
 
@@ -195,7 +192,7 @@
     <div class="box">
         <g-input value="王五" @change="inputChange"></g-input>
     </div>
-
+    </div>
 
 </div>
 <!--<script src="./node_modules/vue/dist/vue.min.js"></script>-->

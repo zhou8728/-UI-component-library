@@ -1,14 +1,39 @@
 <template>
-    <div class="col" :class="[`col-${span}`]">
-        <slot></slot>
+    <div class="col" :class="[span&&`col-${span}`,`offset-${offset}`]"
+       :style="{paddingLeft:gutter/2+'px',paddingRight:gutter/2+'px'}"
+    >
+        <div style="border:1px solid green;height:100px;">
+            <slot></slot>
+        </div>
+
     </div>
 </template>
 
 <script>
-    export default{
+    export default {
         // name:'GuluCol',
-        props:{
-            span:Number
+        props: {
+            span: {
+                type: [Number, String]
+            },
+            offset: {
+                type: [Number,String]
+            },
+            // gutter:{
+            //     type: [Number,String]
+            // }
+
+        },
+        data(){
+            return {
+                gutter:0
+            }
+        },
+        created(){
+            console.log(this.$children);
+        },
+        mounted(){
+            console.log(this.$children);
         }
     }
 
@@ -16,17 +41,22 @@
 
 <style lang="scss" scoped>
     .col{
-        height:100px;
-        background: grey;
+        /*height:100px;*/
+        /*background: grey;*/
         width:50%;
-        border:1px solid red;
-
+        /*border:1px solid red;*/
+        /*padding:0 10px;*/
         $class-prefix:col-;
         @for $n from 1 through 24 {
-
-            // for each $col_#{i}
             &.#{$class-prefix}#{$n} {
                 width:($n/24)*100%;
+
+            }
+        }
+        $class-prefix:offset-;
+        @for $n from 1 through 24 {
+            &.#{$class-prefix}#{$n} {
+                margin-left:($n/24)*100%;
 
             }
         }
