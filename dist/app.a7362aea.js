@@ -10728,13 +10728,18 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
-//
 
 exports.default = {
     // name:'GuluRow',
     props: {
         gutter: {
             type: [Number, String]
+        },
+        align: {
+            type: String,
+            validator: function validator(value) {
+                return ['right', 'left', 'center'].includes(value);
+            }
         }
     },
     computed: {
@@ -10742,6 +10747,10 @@ exports.default = {
             var gutter = this.gutter;
 
             return { marginLeft: -gutter / 2 + 'px', marginRight: -gutter / 2 + 'px' };
+        },
+        rowClass: function rowClass() {
+            var align = this;
+            return [align && 'align-' + align];
         }
     },
 
@@ -10768,7 +10777,7 @@ exports.default = {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "row", style: _vm.rowStyle },
+    { staticClass: "row", class: _vm.rowClass, style: _vm.rowStyle },
     [_vm._t("default")],
     2
   )
@@ -11078,7 +11087,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '52854' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '65406' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
