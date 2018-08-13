@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3da786a9-9387-447b-87c3-22e177a5acdf" name="Default" comment="添加row的align=left/right/center 属性">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="3da786a9-9387-447b-87c3-22e177a5acdf" name="Default" comment="col row组件响应式基本完成">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/app.a7362aea.css" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app.a7362aea.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/app.a7362aea.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app.a7362aea.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/app.a7362aea.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app.a7362aea.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/col.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/col.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -31,23 +27,23 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="3" />
-          <entry key="html" value="1131" />
+          <entry key="html" value="1132" />
           <entry key="js" value="3255" />
           <entry key="json" value="146" />
           <entry key="md" value="761" />
-          <entry key="txt" value="315" />
-          <entry key="vue" value="4132" />
+          <entry key="txt" value="355" />
+          <entry key="vue" value="4478" />
           <entry key="yml" value="181" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="1131" />
+          <entry key="HTML" value="1132" />
           <entry key="JSON" value="146" />
           <entry key="JavaScript" value="3255" />
           <entry key="Markdown" value="761" />
-          <entry key="PLAIN_TEXT" value="318" />
-          <entry key="Vue.js" value="4132" />
+          <entry key="PLAIN_TEXT" value="358" />
+          <entry key="Vue.js" value="4478" />
           <entry key="YAML" value="181" />
         </counts>
       </usages-collector>
@@ -82,11 +78,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="138" column="28" lean-forward="true" selection-start-line="138" selection-start-column="28" selection-end-line="138" selection-end-column="28" />
+            <state relative-caret-position="482">
+              <caret line="161" column="23" selection-start-line="161" selection-start-column="23" selection-end-line="161" selection-end-column="23" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1534154527644" expanded="true" signature="3359:3496" ph="..." />
+                <marker date="1534154711117" expanded="true" signature="3359:3496" ph="..." />
               </folding>
             </state>
           </provider>
@@ -122,8 +118,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/col.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="81" column="62" selection-start-line="81" selection-start-column="62" selection-end-line="81" selection-end-column="62" />
+            <state relative-caret-position="585">
+              <caret line="75" column="10" selection-start-line="75" selection-start-column="10" selection-end-line="75" selection-end-column="10" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
               </folding>
@@ -325,7 +321,7 @@
       <workItem from="1533194660645" duration="703000" />
       <workItem from="1533195431435" duration="20247000" />
       <workItem from="1533733086322" duration="133000" />
-      <workItem from="1533733359748" duration="81114000" />
+      <workItem from="1533733359748" duration="84546000" />
     </task>
     <task id="LOCAL-00001" summary="add gitignore">
       <created>1533192402483</created>
@@ -481,11 +477,25 @@
       <option name="project" value="LOCAL" />
       <updated>1534130154623</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="初步完成col row组件">
+      <created>1534154828820</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1534154828820</updated>
+    </task>
+    <task id="LOCAL-00024" summary="col row组件响应式基本完成">
+      <created>1534158501679</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1534158501679</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106287000" />
+    <option name="totallyTimeSpent" value="109719000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1882" y="23" width="1882" height="1057" extended-state="6" />
@@ -520,7 +530,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="add gitignore" />
     <MESSAGE value="完成按钮基本样式" />
     <MESSAGE value="安装parcel" />
     <MESSAGE value="安装parcel  将组建转化为单文件组建形式" />
@@ -544,7 +553,9 @@
     <MESSAGE value="基本实现row和col的功能" />
     <MESSAGE value="重构row和col" />
     <MESSAGE value="添加row的align=left/right/center 属性" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加row的align=left/right/center 属性" />
+    <MESSAGE value="初步完成col row组件" />
+    <MESSAGE value="col row组件响应式基本完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="col row组件响应式基本完成" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/node_modules/.gitignore" />
@@ -686,6 +697,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="161" column="23" selection-start-line="161" selection-start-column="23" selection-end-line="161" selection-end-column="23" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1534154711117" expanded="true" signature="3359:3496" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/icon.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -693,21 +715,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="138" column="28" lean-forward="true" selection-start-line="138" selection-start-column="28" selection-end-line="138" selection-end-column="28" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1534154527644" expanded="true" signature="3359:3496" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/col.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="81" column="62" selection-start-line="81" selection-start-column="62" selection-end-line="81" selection-end-column="62" />
+        <state relative-caret-position="585">
+          <caret line="75" column="10" selection-start-line="75" selection-start-column="10" selection-end-line="75" selection-end-column="10" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
           </folding>

@@ -58,6 +58,22 @@
 
             }
         },
+        methods:{
+             createClass  (obj,str=''){
+                if(!obj){
+                    return []
+                }
+                let array=[]
+                if(obj.span){
+                    array.push(`col-${str}-${obj.span}`)
+                }
+                if(obj.offset){
+                    array.push(`offset-${str}${obj.span}`)
+                }
+                return array
+
+            }
+        },
         computed:{
             colStyle(){
                 return{
@@ -67,22 +83,29 @@
             },
             colClass(){
 
-                let {span,offset,phone, iPad,narrowPc,pc,widePc} =this
+                let {span,offset,phone,ipad,narrowPc,pc,widePc} =this
+
 
                 let phoneClass=[]
                 if(phone){
                     phoneClass=[]
                 }
-
+                let createClass=this.createClass
 
                 return [
-                    span &&`col-${span}`,
-                    offset && `offset-${offset}`,
+                    ...createClass({span,offset}),
+                    ...createClass(ipad,'iPad-'),
+                    ...createClass(narrowPc,'narrow-pc-'),
+                    ...createClass(pc,'pc-'),
+                    ...createClass(widePc,'wide-pc-')
+
+                    // span &&`col-${span}`,
+                    // offset && `offset-${offset}`,
                     // ...(phone && [`col-phone-${phone.span}`]),
-                    ...(iPad ?  [`col-phone-${iPad.span}`]:[]),
-                    ...(narrowPc ?[`{col-phone-${narrowPc.span}`]:[]),
-                    ...(pc ? [`col-phone-${pc.span}`]:[]),
-                    ...(widePc ? [`col-phone-${widePc.span}`]:[])
+                    // ...(ipad ?  [`col-phone-${iPad.span}`]:[]),
+                    // ...(narrowPc ?[`{col-phone-${narrowPc.span}`]:[]),
+                    // ...(pc ? [`col-phone-${pc.span}`]:[]),
+                    // ...(widePc ? [`col-phone-${widePc.span}`]:[])
                 ]
             }
 
@@ -160,7 +183,7 @@
 
                 }
             }
-            $class-prefix:offset-pc-;
+             $class-prefix:offset-pc-;
             @for $n from 1 through 24 {
                 &.#{$class-prefix}#{$n} {
                     margin-left:($n/24)*100%;

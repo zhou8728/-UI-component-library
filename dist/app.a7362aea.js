@@ -10885,6 +10885,23 @@ exports.default = {
         };
     },
 
+    methods: {
+        createClass: function createClass(obj) {
+            var str = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+
+            if (!obj) {
+                return [];
+            }
+            var array = [];
+            if (obj.span) {
+                array.push('col-' + str + '-' + obj.span);
+            }
+            if (obj.offset) {
+                array.push('offset-' + str + obj.span);
+            }
+            return array;
+        }
+    },
     computed: {
         colStyle: function colStyle() {
             return {
@@ -10896,7 +10913,7 @@ exports.default = {
             var span = this.span,
                 offset = this.offset,
                 phone = this.phone,
-                iPad = this.iPad,
+                ipad = this.ipad,
                 narrowPc = this.narrowPc,
                 pc = this.pc,
                 widePc = this.widePc;
@@ -10906,8 +10923,9 @@ exports.default = {
             if (phone) {
                 phoneClass = [];
             }
+            var createClass = this.createClass;
 
-            return [span && 'col-' + span, offset && 'offset-' + offset].concat(_toConsumableArray(iPad ? ['col-phone-' + iPad.span] : []), _toConsumableArray(narrowPc ? ['{col-phone-' + narrowPc.span] : []), _toConsumableArray(pc ? ['col-phone-' + pc.span] : []), _toConsumableArray(widePc ? ['col-phone-' + widePc.span] : []));
+            return [].concat(_toConsumableArray(createClass({ span: span, offset: offset })), _toConsumableArray(createClass(ipad, 'iPad-')), _toConsumableArray(createClass(narrowPc, 'narrow-pc-')), _toConsumableArray(createClass(pc, 'pc-')), _toConsumableArray(createClass(widePc, 'wide-pc-')));
         }
     },
 
@@ -11129,7 +11147,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '51915' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '58269' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
