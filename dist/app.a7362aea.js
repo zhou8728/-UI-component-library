@@ -10821,6 +10821,9 @@ render._withStripped = true
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 //
 //
 //
@@ -10833,6 +10836,16 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
+var validator = function validator(value) {
+    var valid = true;
+    var keys = Object.keys(value);
+    keys.forEach(function (key) {
+        if (!['span', 'offset'].includes(key)) {
+            valid = false;
+        }
+    });
+    return valid;
+};
 exports.default = {
     // name:'GuluCol',
     props: {
@@ -10841,10 +10854,28 @@ exports.default = {
         },
         offset: {
             type: [Number, String]
+        },
+        // phone:{
+        //   type:[Object],
+        //     validator
+        //
+        // },
+        iPad: {
+            type: Object,
+            validator: validator
+        },
+        narrowPc: {
+            type: Object,
+            validator: validator
+        },
+        pc: {
+            type: Object,
+            validator: validator
+        },
+        widePc: {
+            type: Object,
+            validator: validator
         }
-        // gutter:{
-        //     type: [Number,String]
-        // }
 
     },
     data: function data() {
@@ -10863,9 +10894,20 @@ exports.default = {
         },
         colClass: function colClass() {
             var span = this.span,
-                offset = this.offset;
+                offset = this.offset,
+                phone = this.phone,
+                iPad = this.iPad,
+                narrowPc = this.narrowPc,
+                pc = this.pc,
+                widePc = this.widePc;
 
-            return [span && 'col-' + span, offset && 'offset-' + offset];
+
+            var phoneClass = [];
+            if (phone) {
+                phoneClass = [];
+            }
+
+            return [span && 'col-' + span, offset && 'offset-' + offset].concat(_toConsumableArray(iPad ? ['col-phone-' + iPad.span] : []), _toConsumableArray(narrowPc ? ['{col-phone-' + narrowPc.span] : []), _toConsumableArray(pc ? ['col-phone-' + pc.span] : []), _toConsumableArray(widePc ? ['col-phone-' + widePc.span] : []));
         }
     },
 
@@ -11087,7 +11129,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '65406' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '65333' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
