@@ -10717,7 +10717,7 @@ render._withStripped = true
       }
     })();
 },{"./icon":"src/icon.vue","_css_loader":"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/row.vue":[function(require,module,exports) {
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -10735,6 +10735,13 @@ exports.default = {
     props: {
         gutter: {
             type: [Number, String]
+        }
+    },
+    computed: {
+        rowStyle: function rowStyle() {
+            var gutter = this.gutter;
+
+            return { marginLeft: -gutter / 2 + 'px', marginRight: -gutter / 2 + 'px' };
         }
     },
 
@@ -10761,13 +10768,7 @@ exports.default = {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    {
-      staticClass: "row",
-      style: {
-        marginLeft: -_vm.gutter / 2 + "px",
-        marginRight: -_vm.gutter / 2 + "px"
-      }
-    },
+    { staticClass: "row", style: _vm.rowStyle },
     [_vm._t("default")],
     2
   )
@@ -10806,7 +10807,7 @@ render._withStripped = true
       }
     })();
 },{"_css_loader":"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/col.vue":[function(require,module,exports) {
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -10840,8 +10841,25 @@ exports.default = {
     data: function data() {
         return {
             gutter: 0
+
         };
     },
+
+    computed: {
+        colStyle: function colStyle() {
+            return {
+                paddingLeft: this.gutter / 2 + 'px',
+                paddingRight: this.gutter / 2 + 'px'
+            };
+        },
+        colClass: function colClass() {
+            var span = this.span,
+                offset = this.offset;
+
+            return [span && 'col-' + span, offset && 'offset-' + offset];
+        }
+    },
+
     created: function created() {
         console.log(this.$children);
     },
@@ -10863,14 +10881,7 @@ exports.default = {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    {
-      staticClass: "col",
-      class: [_vm.span && "col-" + _vm.span, "offset-" + _vm.offset],
-      style: {
-        paddingLeft: _vm.gutter / 2 + "px",
-        paddingRight: _vm.gutter / 2 + "px"
-      }
-    },
+    { staticClass: "col", class: _vm.colClass, style: _vm.colStyle },
     [
       _c(
         "div",
@@ -11067,7 +11078,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '49927' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '52854' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
