@@ -4,7 +4,7 @@
 
 <script>
     export default {
-        name: "slider.vue"
+        name: "GuluSider"
     }
 </script>
 

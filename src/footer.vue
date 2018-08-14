@@ -1,13 +1,17 @@
 <template>
-    
+    <div class="footer">
+
+    </div>
 </template>
 
 <script>
     export default {
-        name: "footer.vue"
+        // name: "footer.vue"
     }
 </script>
 
 <style scoped>
+    .footer{
 
+    }
 </style>
