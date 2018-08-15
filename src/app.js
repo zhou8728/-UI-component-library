@@ -10,6 +10,8 @@ import Header from './header'
 import Footer from './footer'
 import Slider from './slider'
 import Content from './content'
+import Toast from './toast'
+import plugin from './plugin'
 
 
 Vue.component('g-button',Button)
@@ -23,6 +25,8 @@ Vue.component('g-slider',Slider)
 Vue.component('g-content',Content)
 Vue.component('g-header',Header)
 Vue.component('g-footer',Footer)
+Vue.component('g-toast',Toast)
+Vue.use(plugin)
 
 new Vue({
     el:'#app',
@@ -39,10 +43,15 @@ new Vue({
             inputElement.dispatchEvent(event)
             console.log('hi')
         },3000)
+        this.$toast('我是message')
     },
     methods:{
         inputChange(e){
             console.log(e);
+        },
+        showToast(){
+            console.log('1')
+            // this.$toast('当前功能不稳定，如果遇到bug请关闭该功能')
         }
     }
 })
