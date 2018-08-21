@@ -12,6 +12,11 @@ import Slider from './slider'
 import Content from './content'
 import Toast from './toast'
 import plugin from './plugin'
+import TabsHeader from './tabs-header'
+import TabsBody from './tabs-body'
+import TabsItem from './tabs-item'
+import TabsPane from './tabs-pane'
+
 
 
 Vue.component('g-button',Button)
@@ -26,6 +31,11 @@ Vue.component('g-content',Content)
 Vue.component('g-header',Header)
 Vue.component('g-footer',Footer)
 Vue.component('g-toast',Toast)
+
+Vue.component('g-tabs-header',TabsHeader)
+Vue.component('g-tabs-body',TabsBody)
+Vue.component('g-tabs-item',TabsItem)
+Vue.component('g-tabs-pane',TabsPane)
 Vue.use(plugin)
 
 new Vue({
@@ -34,16 +44,31 @@ new Vue({
         loading1:false,
         loading2:false,
         loading3:false,
-        message:'hi'
+        message:'hi',
+        selectedTab:'sports'
     },
     created(){
-        setTimeout(()=>{
-            let event = new Event('change')
-            let inputElement = this.$el.querySelector('input')
-            inputElement.dispatchEvent(event)
-            console.log('hi')
-        },3000)
-        this.$toast('我是message')
+        // this.$toast('我是message',{
+        //     closeButton:{
+        //         text:'知道了',
+        //         callback(toast){
+        //             console.log(toast)
+        //             console.log('用户说他知道了');
+        //         }
+        //
+        //     }
+        // })
+
+        this.$toast('<p>段落<strong>hi</strong><a href="http://qq.com"></a></p>')
+
+
+        // setTimeout(()=>{
+        //     let event = new Event('change')
+        //     let inputElement = this.$el.querySelector('input')
+        //     inputElement.dispatchEvent(event)
+        //     console.log('hi')
+        // },3000)
+
     },
     methods:{
         inputChange(e){
