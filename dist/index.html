@@ -57,10 +57,30 @@
             height: 1em;
         }
     </style>
-<link rel="stylesheet" href="/app.a7362aea.css"></head>
+<link rel="stylesheet" href="/app.7491cc31.css"></head>
 <body>
 
 <style>
+    .demo{
+        border:1px solid #666;
+        min-height:100px;
+    }
+    .sider{
+        background:#333;
+        width:200px;
+    }
+    .header{
+        background:#999;
+        height:100px;
+    }
+    .sider.slider-enter,.side.slider-leave-to{
+        margin-left:-150px;
+    }
+    .footer{
+        background:#ccc;
+        height:50px;
+    }
+
     .row{
         display: flex;
     }
@@ -70,156 +90,35 @@
         /*width:50%;*/
         /*border:1px solid red;*/
     }
-    /*.col[data-span="2"]{*/
-         /*width:8.333333%;*/
-     /*}*/
-    /*.col[data-span="2"]{*/
-        /*width:91.666667%;*/
-    /*}*/
-    /*.col[data-span="3"]{*/
-        /*width:8.333333%;*/
-    /*}*/
-    /*.col[data-span="4"]{*/
-        /*width:91.666667%;*/
-    /*}*/
-    /*.col[data-span="5"]{*/
-        /*width:8.333333%;*/
-    /*}*/
-    /*.col[data-span="6"]{*/
-        /*width:91.666667%;*/
-    /*}*/
-    /*.col[data-span="7"]{*/
-        /*width:8.333333%;*/
-    /*}*/
-    /*.col[data-span="8"]{*/
-        /*width:91.666667%;*/
-    /*}*/
-    /*.col[data-span="9"]{*/
-        /*width:8.333333%;*/
-    /*}*/
-    /*.col[data-span="10"]{*/
-        /*width:91.666667%;*/
-    /*}*/
-    /*.col[data-span="11"]{*/
-        /*width:8.333333%;*/
-    /*}*/
-    /*.col[data-span="12"]{*/
-        /*width:91.666667%;*/
-    /*}*/
-    /*.col[data-span="13"]{*/
-        /*width:8.333333%;*/
-    /*}*/
-    /*.col[data-span="14"]{*/
-        /*width:91.666667%;*/
-    /*}*/
-    /*.col[data-span="15"]{*/
-        /*width:8.333333%;*/
-    /*}*/
-    /*.col[data-span="16"]{*/
-        /*width:91.666667%;*/
-    /*}*/
-    /*.col[data-span="17"]{*/
-        /*width:8.333333%;*/
-    /*}*/
-    /*.col[data-span="18"]{*/
-        /*width:91.666667%;*/
-    /*}*/
-    /*.col[data-span="19"]{*/
-        /*width:8.333333%;*/
-    /*}*/
-    /*.col[data-span="20"]{*/
-        /*width:91.666667%;*/
-    /*}*/
+
 </style>
-<div id="app">
-    <div style="border :1px solid black">
+<div id="app" style="padding-top:100px;">
 
+    <!-- 手风琴组件 -->
+    <!-- <g-collapse :selected.sync="selectedTab">
+        <g-collapse-item title="标题1" name="1">内容1</g-collapse-item>
+        <g-collapse-item title="标题2" name="2">内容2</g-collapse-item>
+        <g-collapse-item title="标题3" name="3">内容3</g-collapse-item>
+    </g-collapse>
+    {{selectedTab}} -->
 
-         <g-row gutter="20">
-            <g-col span="20" :ipad="{span:6}" :pc="{span:4}" :narrowpc="{span:2}" :wide-pc="{span:1}">
-            1
-            </g-col>
-        <g-col span="24" :ipad="{span:16}" :pc="{span:22}" :narrowpc="{span:20}" :wide-pc="{span:23}">
-        2
-        </g-col>
-    </g-row>
-    <g-row gutter="20">
-        <g-col>1</g-col>
-        <g-col>2</g-col>
-        <g-col>3</g-col>
-    </g-row>
-    <g-row gutter="20">
-        <g-col>1</g-col>
-        <g-col>2</g-col>
-        <g-col>3</g-col>
-        <g-col>4</g-col>
-    </g-row>
-    <g-row gutter="20">
-        <g-col span="4"></g-col>
-        <g-col span="20" offset="2">2</g-col>
-    </g-row>
-    <g-row gutter="20">
-        <g-col :span="4">1</g-col>
-        <g-col span="18">2</g-col>
-    </g-row>
-
-
-    <hr>
-
-    <!--<g-button icon="setting" @click="loading2=!loading2" icon-position="right" :loading="loading2">-->
-        <!--按钮-->
-    <!--</g-button>-->
-
-    <!--<div id="test"></div>-->
-   <!---->
-    <!--<g-button icon="setting" @click="loading3=!loading3"  icon-position="right" :loading="loading3">-->
-        <!--按钮-->
-    <!--</g-button>-->
-    <!--<g-button-group>-->
-
-        <!--<g-button icon="left">上一页</g-button>-->
-
-            <!--<g-button>更多</g-button>-->
-        <!--<g-button icon-position="right" icon="right">下一页</g-button>-->
-    <!--</g-button-group>-->
-    <div class="box">
-        <g-input value="张三" :disabled="true" :readonly="true"></g-input>
-        <g-input value="李四" readonly=""></g-input>
-        <g-input value="李四" v-model="message"></g-input>
-        <p>{{message}}</p>
-        <button @click="message+=1">+1</button>
-    </div>
-
-    <div class="box">
-        <g-input value="王五" error="姓名不能少于两个字"></g-input>
-    </div>
-    <div class="box">
-        <g-input value="王五" @change="inputChange"></g-input>
-    </div>
-    </div>
-
-    </div>
-
-    <g-loyout style="height:100vh;">
-        <g-header class="demo">header</g-header>
-        <g-layout>
-            <g-sider></g-sider>
-            <g-content class="demo">content</g-content>
-        </g-layout>
-
-        <g-footer class="demo">footer</g-footer>
-    </g-loyout>
-
-<script src="/app.a7362aea.js"></script>
+    <!-- 省市区选择组件 -->
+    <g-cascader :data-source=""></g-cascader>
+   
+</div>
+<script src="/app.7491cc31.js"></script>
 <script src="//at.alicdn.com/t/font_775244_ex639p5s3rh.js"></script>
+
 <script>
-    // new Vue({
-    //     el:'#app',
-    //     data:{
-    //         message:'hi'
-    //     }
-    //
-    // })
+    import Vue from  'vue'
+    new Vue({
+        el:'#app',
+        data:{
+            message:'hi',
+            selectedTab: '2'
+        }
+    
+    })
 </script>
 </body>
 </html>

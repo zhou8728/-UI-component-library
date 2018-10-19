@@ -11212,9 +11212,22 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 exports.default = {
-    name: "GuluSider"
+    name: "GuluSider",
+    data: function data() {
+        return {
+            visible: true
+        };
+    },
+
+    methods: {}
 };
         var $327273 = exports.default || module.exports;
       
@@ -11228,7 +11241,30 @@ exports.default = {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _c("transition", { attrs: { name: "slide" } }, [
+    _vm.visible
+      ? _c(
+          "div",
+          { staticClass: "sider" },
+          [
+            _vm._t("default"),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                on: {
+                  click: function($event) {
+                    _vm.visible = false
+                  }
+                }
+              },
+              [_vm._v("close")]
+            )
+          ],
+          2
+        )
+      : _vm._e()
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -11326,6 +11362,442 @@ render._withStripped = true
       
       }
     })();
+},{"_css_loader":"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/toast.vue":[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+exports.default = {
+    name: "GuluToast",
+    props: {
+        autoClose: {
+            type: Boolean,
+            default: true
+        },
+        autoCloseDelay: {
+            type: Number,
+            default: 5
+        },
+        closeButton: {
+            type: Object,
+            default: function _default() {
+                return {
+                    text: '关闭', callback: function callback(toast) {
+                        toast: close();
+                    }
+                };
+            }
+        },
+        enableHtml: {
+            type: Boolean,
+            default: false
+        }
+    },
+    created: function created() {
+        console.log(this.closeButton);
+    },
+    mounted: function mounted() {
+        var _this = this;
+
+        if (this.autoClose) {
+            setTimeout(function () {
+                _this.close();
+            }, this.autoCloseDelay * 1000);
+        }
+    },
+
+    methods: {
+        close: function close() {
+            this.$el.remove();
+            this.$destroy();
+        },
+        onClickClose: function onClickClose() {
+            this.close();
+            if (this.closeButton && typeof this.closeButton.callback === 'function') {
+                this.closeButton.callback(this); //this===toast实例
+            }
+        }
+    }
+};
+        var $b1fa77 = exports.default || module.exports;
+      
+      if (typeof $b1fa77 === 'function') {
+        $b1fa77 = $b1fa77.options;
+      }
+    
+        /* template */
+        Object.assign($b1fa77, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "toast" },
+    [
+      !_vm.enableHtml
+        ? _vm._t("default")
+        : _c("div", { domProps: { innerHTML: _vm._s(_vm.$slots.default[0]) } }),
+      _vm._v(" "),
+      _c("div", { staticClass: "line" }),
+      _vm._v(" "),
+      _vm.closeButton
+        ? _c(
+            "span",
+            { staticClass: "close", on: { click: _vm.onClickClose } },
+            [_vm._v("\n        " + _vm._s(_vm.closeButton.text) + "\n    ")]
+          )
+        : _vm._e()
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: "data-v-b1fa77",
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$b1fa77', $b1fa77);
+          } else {
+            api.reload('$b1fa77', $b1fa77);
+          }
+        }
+
+        
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+      }
+    })();
+},{"_css_loader":"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/plugin.js":[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _toast = require('./toast');
+
+var _toast2 = _interopRequireDefault(_toast);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+    install: function install(Vue, options) {
+        Vue.prototype.$toast = function (message) {
+            console.log('I am toast');
+            var Constructor = Vue.extend(_toast2.default);
+            var toast = new Constructor({
+                propsData: {
+                    closeButton: {
+                        text: '知道了',
+                        callback: function callback() {
+                            console.log('用户说他知道了');
+                        }
+                    }
+                }
+            });
+            toast.$mount();
+            toast.$slots.default = [message];
+            document.body.appendChild(toast.$el);
+        };
+    }
+};
+},{"./toast":"src/toast.vue"}],"src/tabs-header.vue":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+    name: "GuluTabs"
+};
+        var $eb7d18 = exports.default || module.exports;
+      
+      if (typeof $eb7d18 === 'function') {
+        $eb7d18 = $eb7d18.options;
+      }
+    
+        /* template */
+        Object.assign($eb7d18, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "tabs-header" },
+    [_vm._t("default"), _vm._v(" "), _vm._t("actions")],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: "data-v-eb7d18",
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$eb7d18', $eb7d18);
+          } else {
+            api.reload('$eb7d18', $eb7d18);
+          }
+        }
+
+        
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+      }
+    })();
+},{"_css_loader":"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/tabs-body.vue":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+    name: "GuluTabBody"
+};
+        var $97cae1 = exports.default || module.exports;
+      
+      if (typeof $97cae1 === 'function') {
+        $97cae1 = $97cae1.options;
+      }
+    
+        /* template */
+        Object.assign($97cae1, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "tabs-body" })
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: "data-v-97cae1",
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$97cae1', $97cae1);
+          } else {
+            api.reload('$97cae1', $97cae1);
+          }
+        }
+
+        
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+      }
+    })();
+},{"_css_loader":"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/tabs-item.vue":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+    name: "GuluTabsItem",
+    props: {
+        disabled: {
+            type: Boolean,
+            default: false
+        }
+    }
+};
+        var $16488c = exports.default || module.exports;
+      
+      if (typeof $16488c === 'function') {
+        $16488c = $16488c.options;
+      }
+    
+        /* template */
+        Object.assign($16488c, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "tabs-item" }, [_vm._t("default")], 2)
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: "data-v-16488c",
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$16488c', $16488c);
+          } else {
+            api.reload('$16488c', $16488c);
+          }
+        }
+
+        
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+      }
+    })();
+},{"_css_loader":"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/tabs-pane.vue":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+    name: "Gulipane"
+};
+        var $fe9c88 = exports.default || module.exports;
+      
+      if (typeof $fe9c88 === 'function') {
+        $fe9c88 = $fe9c88.options;
+      }
+    
+        /* template */
+        Object.assign($fe9c88, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "pane" })
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: "data-v-fe9c88",
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$fe9c88', $fe9c88);
+          } else {
+            api.reload('$fe9c88', $fe9c88);
+          }
+        }
+
+        
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+      }
+    })();
 },{"_css_loader":"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/app.js":[function(require,module,exports) {
 'use strict';
 
@@ -11377,6 +11849,30 @@ var _content = require('./content');
 
 var _content2 = _interopRequireDefault(_content);
 
+var _toast = require('./toast');
+
+var _toast2 = _interopRequireDefault(_toast);
+
+var _plugin = require('./plugin');
+
+var _plugin2 = _interopRequireDefault(_plugin);
+
+var _tabsHeader = require('./tabs-header');
+
+var _tabsHeader2 = _interopRequireDefault(_tabsHeader);
+
+var _tabsBody = require('./tabs-body');
+
+var _tabsBody2 = _interopRequireDefault(_tabsBody);
+
+var _tabsItem = require('./tabs-item');
+
+var _tabsItem2 = _interopRequireDefault(_tabsItem);
+
+var _tabsPane = require('./tabs-pane');
+
+var _tabsPane2 = _interopRequireDefault(_tabsPane);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _vue2.default.component('g-button', _button2.default);
@@ -11390,6 +11886,13 @@ _vue2.default.component('g-slider', _slider2.default);
 _vue2.default.component('g-content', _content2.default);
 _vue2.default.component('g-header', _header2.default);
 _vue2.default.component('g-footer', _footer2.default);
+_vue2.default.component('g-toast', _toast2.default);
+
+_vue2.default.component('g-tabs-header', _tabsHeader2.default);
+_vue2.default.component('g-tabs-body', _tabsBody2.default);
+_vue2.default.component('g-tabs-item', _tabsItem2.default);
+_vue2.default.component('g-tabs-pane', _tabsPane2.default);
+_vue2.default.use(_plugin2.default);
 
 new _vue2.default({
     el: '#app',
@@ -11397,22 +11900,38 @@ new _vue2.default({
         loading1: false,
         loading2: false,
         loading3: false,
-        message: 'hi'
+        message: 'hi',
+        selectedTab: 'sports'
     },
     created: function created() {
-        var _this = this;
+        // this.$toast('我是message',{
+        //     closeButton:{
+        //         text:'知道了',
+        //         callback(toast){
+        //             console.log(toast)
+        //             console.log('用户说他知道了');
+        //         }
+        //
+        //     }
+        // })
 
-        setTimeout(function () {
-            var event = new Event('change');
-            var inputElement = _this.$el.querySelector('input');
-            inputElement.dispatchEvent(event);
-            console.log('hi');
-        }, 3000);
+        this.$toast('<p>段落<strong>hi</strong><a href="http://qq.com"></a></p>');
+
+        // setTimeout(()=>{
+        //     let event = new Event('change')
+        //     let inputElement = this.$el.querySelector('input')
+        //     inputElement.dispatchEvent(event)
+        //     console.log('hi')
+        // },3000)
     },
 
     methods: {
         inputChange: function inputChange(e) {
             console.log(e);
+        },
+        showToast: function showToast() {
+            console.log('1');
+            // this.$toast('当前功能不稳定，如果遇到bug请关闭该功能')
         }
     }
 });
@@ -11475,7 +11994,7 @@ new _vue2.default({
 //     button.$el.remove()
 //     button.$destroy()
 // }
-},{"vue":"node_modules/vue/dist/vue.common.js","./button":"src/button.vue","./icon":"src/icon.vue","./button-group":"src/button-group.vue","./input":"src/input.vue","./row":"src/row.vue","./col":"src/col.vue","./layout":"src/layout.vue","./header":"src/header.vue","./footer":"src/footer.vue","./slider":"src/slider.vue","./content":"src/content.vue"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"vue":"node_modules/vue/dist/vue.common.js","./button":"src/button.vue","./icon":"src/icon.vue","./button-group":"src/button-group.vue","./input":"src/input.vue","./row":"src/row.vue","./col":"src/col.vue","./layout":"src/layout.vue","./header":"src/header.vue","./footer":"src/footer.vue","./slider":"src/slider.vue","./content":"src/content.vue","./toast":"src/toast.vue","./plugin":"src/plugin.js","./tabs-header":"src/tabs-header.vue","./tabs-body":"src/tabs-body.vue","./tabs-item":"src/tabs-item.vue","./tabs-pane":"src/tabs-pane.vue"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -11504,7 +12023,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '50172' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '57416' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
